@@ -12,6 +12,59 @@
 </head>
 
 <body>
+  <script type="text/javascript">
+    // Without helper methods
+    var MahunanDegbelo = vCard.create(vCard.Version.FOUR)
+    MahunanDegbelo.add(vCard.Entry.NAME, "Mahunan;Degbelo;;")
+    MahunanDegbelo.add(vCard.Entry.FORMATTEDNAME, "Mahunan Degbelo")
+    MahunanDegbelo.add(vCard.Entry.NICKNAME, "Mahunan")
+    MahunanDegbelo.add(vCard.Entry.TITLE, "Jr Web Developer")
+    MahunanDegbelo.add(vCard.Entry.PHONE, "(608) 888 4495", vCard.Type.CELL)
+    MahunanDegbelo.add(vCard.Entry.EMAIL, "contact@jeeb.info", vCard.Type.WORK)
+    MahunanDegbelo.add(vCard.Entry.EMAIL, "mahunandegbelo@gmail.com", vCard.Type.HOME)
+    MahunanDegbelo.add(vCard.Entry.ORGANIZATION, "JCARD")
+    MahunanDegbelo.add(vCard.Entry.ADDRESS, ";;10 Heritage Circle;Madison;WI;53711;United State", vCard.Type.HOME)
+    MahunanDegbelo.add(vCard.Entry.URL, "http://www.jeeb.info")
+
+    var link = vCard.export(MahunanDegbelo, "Mahunan Degbelo", false) // use parameter true to force download
+    document.body.appendChild(link)
+  </script>
+
+  <div class="snowflakes" aria-hidden="true">
+
+    <div class="snowflake">
+      ❅
+    </div>
+    <div class="snowflake">
+      ❅
+    </div>
+    <div class="snowflake">
+      ❆
+    </div>
+    <div class="snowflake">
+      ❄
+    </div>
+    <div class="snowflake">
+      ❅
+    </div>
+    <div class="snowflake">
+      ❆
+    </div>
+    <div class="snowflake">
+      ❄
+    </div>
+    <div class="snowflake">
+      ❅
+    </div>
+    <div class="snowflake">
+      ❆
+    </div>
+    <div class="snowflake">
+      ❄
+    </div>
+  </div>
+
+
   <div class="container">
     <div class="main-body">
       <div class="row gutters-sm">
@@ -66,7 +119,7 @@
               <hr>
               <div class="row">
                 <div class="col-sm-12">
-                  <a class="btn btn-info " target="__blank" href="#">Save Contact</a>
+                  <a class="btn btn-info" download="MahunanDegbelo.vcf" href="">Save Contact</a>
                 </div>
               </div>
             </div>
@@ -211,9 +264,148 @@
     <style type="text/css">
       body {
         margin-top: 20px;
-        color: #1a202c;
+        color: #ffffff;
         text-align: left;
-        background-color: #000000;
+        background-color: #ffffff;
+      }
+
+      .snowflake {
+        color: #fff;
+        font-size: 1.5em;
+        font-family: Arial;
+        text-shadow: 0 0 1px #000;
+      }
+
+      @-webkit-keyframes snowflakes-fall {
+        0% {
+          top: -10%
+        }
+
+        100% {
+          top: 100%
+        }
+      }
+
+      @-webkit-keyframes snowflakes-shake {
+        0% {
+          -webkit-transform: translateX(0px);
+          transform: translateX(0px)
+        }
+
+        50% {
+          -webkit-transform: translateX(80px);
+          transform: translateX(80px)
+        }
+
+        100% {
+          -webkit-transform: translateX(0px);
+          transform: translateX(0px)
+        }
+      }
+
+      @keyframes snowflakes-fall {
+        0% {
+          top: -10%
+        }
+
+        100% {
+          top: 100%
+        }
+      }
+
+      @keyframes snowflakes-shake {
+        0% {
+          transform: translateX(0px)
+        }
+
+        50% {
+          transform: translateX(80px)
+        }
+
+        100% {
+          transform: translateX(0px)
+        }
+      }
+
+      .snowflake {
+        position: fixed;
+        top: -10%;
+        z-index: 9999;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: default;
+        -webkit-animation-name: snowflakes-fall, snowflakes-shake;
+        -webkit-animation-duration: 10s, 3s;
+        -webkit-animation-timing-function: linear, ease-in-out;
+        -webkit-animation-iteration-count: infinite, infinite;
+        -webkit-animation-play-state: running, running;
+        animation-name: snowflakes-fall, snowflakes-shake;
+        animation-duration: 10s, 3s;
+        animation-timing-function: linear, ease-in-out;
+        animation-iteration-count: infinite, infinite;
+        animation-play-state: running, running
+      }
+
+      .snowflake:nth-of-type(0) {
+        left: 1%;
+        -webkit-animation-delay: 0s, 0s;
+        animation-delay: 0s, 0s
+      }
+
+      .snowflake:nth-of-type(1) {
+        left: 10%;
+        -webkit-animation-delay: 1s, 1s;
+        animation-delay: 1s, 1s
+      }
+
+      .snowflake:nth-of-type(2) {
+        left: 20%;
+        -webkit-animation-delay: 6s, .5s;
+        animation-delay: 6s, .5s
+      }
+
+      .snowflake:nth-of-type(3) {
+        left: 30%;
+        -webkit-animation-delay: 4s, 2s;
+        animation-delay: 4s, 2s
+      }
+
+      .snowflake:nth-of-type(4) {
+        left: 40%;
+        -webkit-animation-delay: 2s, 2s;
+        animation-delay: 2s, 2s
+      }
+
+      .snowflake:nth-of-type(5) {
+        left: 50%;
+        -webkit-animation-delay: 8s, 3s;
+        animation-delay: 8s, 3s
+      }
+
+      .snowflake:nth-of-type(6) {
+        left: 60%;
+        -webkit-animation-delay: 6s, 2s;
+        animation-delay: 6s, 2s
+      }
+
+      .snowflake:nth-of-type(7) {
+        left: 70%;
+        -webkit-animation-delay: 2.5s, 1s;
+        animation-delay: 2.5s, 1s
+      }
+
+      .snowflake:nth-of-type(8) {
+        left: 80%;
+        -webkit-animation-delay: 1s, 0s;
+        animation-delay: 1s, 0s
+      }
+
+      .snowflake:nth-of-type(9) {
+        left: 90%;
+        -webkit-animation-delay: 3s, 1.5s;
+        animation-delay: 3s, 1.5s
       }
 
       .main-body {
@@ -230,7 +422,7 @@
         /* flex-direction: column; */
         min-width: 0;
         word-wrap: break-word;
-        background-color: #fff;
+        background-color: rgb(0, 0, 0);
         background-clip: border-box;
         border: 0 solid rgba(0, 0, 0, .125);
         border-radius: .25rem;
@@ -278,6 +470,8 @@
         box-shadow: none !important;
       }
     </style>
+
+
 
     <script type="text/javascript">
 
