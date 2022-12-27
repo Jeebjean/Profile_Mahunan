@@ -460,38 +460,30 @@
 
 
       // Define the vCard fields
-// var vcardString = 'BEGIN:VCARD\n';
-// vcardString += 'VERSION:3.0\n';
-// vcardString += 'N:Doe;John;M;;\n';
-// vcardString += 'FN:John Doe\n';
-// vcardString += 'TEL;TYPE=home,voice:123-456-7890\n';
-// vcardString += 'EMAIL:john.doe@example.com\n';
-// vcardString += 'END:VCARD\n';
+      var vcardString = 'BEGIN:VCARD\n';
+      vcardString += 'VERSION:3.0\n';
+      vcardString += 'N:Mahunan;Jeeb;;;\n';
+      vcardString += 'FN:Mahunan Jeeb\n';
+      vcardString += 'TEL;TYPE=home,voice:(608) 888 4495\n';
+      vcardString += 'EMAIL:jeebjean@gmail.com\n';
+      vcardString += 'TITLE:Director\n';
+      vcardString += 'ORGANIZATION:J-Card\n';
+      vcardString += 'ADDRESS;TYPE=home:10 Heritage Circle;Madison;WI;53711;United State\n';
+      vcardString += 'URL:https://www.jeeb.info\n';
+      vcardString += 'END:VCARD\n';
 
- var MahunanDegbelo = vCard.create(vCard.Version.FOUR)
-      MahunanDegbelo.add(vCard.Entry.NAME, "Mahunan;Degbelo;;")
-      MahunanDegbelo.add(vCard.Entry.FORMATTEDNAME, "Mahunan Degbelo")
-      MahunanDegbelo.add(vCard.Entry.NICKNAME, "Mahunan")
-      MahunanDegbelo.add(vCard.Entry.TITLE, "Jr Web Developer")
-      MahunanDegbelo.add(vCard.Entry.PHONE, "(608) 888 4495", vCard.Type.CELL)
-      MahunanDegbelo.add(vCard.Entry.EMAIL, "contact@jeeb.info", vCard.Type.WORK)
-      MahunanDegbelo.add(vCard.Entry.EMAIL, "mahunandegbelo@gmail.com", vCard.Type.HOME)
-      MahunanDegbelo.add(vCard.Entry.ORGANIZATION, "JCARD")
-      MahunanDegbelo.add(vCard.Entry.ADDRESS, ";;10 Heritage Circle;Madison;WI;53711;United State", vCard.Type.HOME)
-      MahunanDegbelo.add(vCard.Entry.URL, "http://www.jeeb.info");
+      // Attach an event handler to the save button
+      document.getElementById('save-button').addEventListener('click', function () {
+        // Create an anchor element with a data URI that contains the vCard string
+        var a = document.createElement('a');
+        a.href = 'data:text/vcard;charset=utf-8,' + encodeURIComponent(vcardString);
 
-// Attach an event handler to the save button
-document.getElementById('save-button').addEventListener('click', function() {
-  // Create an anchor element with a data URI that contains the vCard string
-  var a = document.createElement('a');
-  a.href = 'data:text/vcard;charset=utf-8,' + encodeURIComponent(MahunanDegbelo);
+        // Set the download attribute to the desired filename
+        a.download = 'contact.vcf';
 
-  // Set the download attribute to the desired filename
-  a.download = 'contact.vcf';
-
-  // Click the anchor element to trigger the download
-  a.click();
-});
+        // Click the anchor element to trigger the download
+        a.click();
+      });
 
 
 
@@ -508,22 +500,7 @@ document.getElementById('save-button').addEventListener('click', function() {
       // MahunanDegbelo.add(vCard.Entry.EMAIL, "mahunandegbelo@gmail.com", vCard.Type.HOME)
       // MahunanDegbelo.add(vCard.Entry.ORGANIZATION, "JCARD")
       // MahunanDegbelo.add(vCard.Entry.ADDRESS, ";;10 Heritage Circle;Madison;WI;53711;United State", vCard.Type.HOME)
-      // MahunanDegbelo.add(vCard.Entry.URL, "http://www.jeeb.info");
-
-      
-
-
-
-      // const vcardString = MahunanDegbelo.toString();
-      // const vcardUri = encodeURIComponent(vcardString);
-      // const vcardLink = `data:text/vcard;charset=utf-8,${vcardUri}`;
-
-      // <button href="${vcardLink}" download="contact.vcard">Télécharger la vCard</button>
-
-
-      // var button = document.getElementById("download").innerHTML;
-      // var link = vCard.export(MahunanDegbelo, `${button}`, false) // use parameter true to force download
-      // document.body.appendChild(link)
+      // MahunanDegbelo.add(vCard.Entry.URL, "https://www.jeeb.info");
     </script>
 
 
